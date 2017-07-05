@@ -14,4 +14,8 @@ public class NativeFunction {
 
     //获取C中隐藏的AppKey
     public static native String getAppKey();
+
+    //在C中打印log
+//    public static native void printLog(String str);
+
 }

@@ -13,6 +13,7 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags "-frtti -fexceptions"
+                abiFilters 'armeabi', 'armeabi-v7a'
             }
         }
     }
@@ -27,7 +28,16 @@ android {
             path "CMakeLists.txt"
         }
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['jniLibs']
+            java.srcDirs = ['src/main/java']
+        }
+    }
 }
+
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
